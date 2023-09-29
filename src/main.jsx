@@ -1,9 +1,9 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Usuarios from "./components/Usuarios/index.jsx";
 import App from "./App";
+import UsuarioPais from "./components/UsuarioPais";
+import Usuario from "./components/Usuario";
 
 const router = createBrowserRouter([
   {
@@ -12,18 +12,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/usuarios",
-    element: <Usuarios />,
-    // children: [
-    //   {
-    //     path: "/:PAIS",
-    //     element: <Usuarios />,
-    //   },
-    // ],
+
+    element: <Usuario />,
+  },
+
+  {
+    path: "/usuarios/:pais",
+    element: <UsuarioPais />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );

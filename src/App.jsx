@@ -1,14 +1,13 @@
 import "./App.css";
 import { Link } from "react-router-dom";
-// retorno del componente:
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Link to={`/usuarios`}>Usu 1</Link>
-      <Link to={`/usuarios/:PAIS`}>UsuPais</Link>
-    </>
+    <div className="links">
+      <Link to={`/usuarios`}>Ver Usuarios</Link>
+      <Link to={`/usuarios/us`}>Ver Usuarios por Pais</Link>
+    </div>
   );
-}
+};
 
 export default App;

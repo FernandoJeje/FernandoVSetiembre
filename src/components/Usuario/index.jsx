@@ -1,18 +1,14 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./UsuarioPais.css";
+import "./Usuario.css";
 
-const UsuarioPais = () => {
+const Usuario = () => {
   const [users, setUsers] = useState();
 
-  const { pais } = useParams();
-
   useEffect(() => {
-    fetch(`https://randomuser.me/api/?nat=${pais}`)
+    fetch("https://randomuser.me/api/?results=3")
       .then((response) => response.json())
       .then((data) => setUsers(data.results));
   }, []);
-  console.log(users);
 
   return (
     <div>
@@ -28,4 +24,4 @@ const UsuarioPais = () => {
   );
 };
 
-export default UsuarioPais;
+export default Usuario;
